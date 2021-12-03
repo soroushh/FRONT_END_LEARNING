@@ -1,6 +1,6 @@
+Vue.options.delimiters = ['[[', ']]'];
 const vm = new Vue({ // Again, vm is our Vue instance's name for consistency.
     el: '#vm',
-    delimiters: ['[[', ']]'],
     data: {
         greeting: 'Hello, Vue!'
     }
@@ -8,7 +8,6 @@ const vm = new Vue({ // Again, vm is our Vue instance's name for consistency.
 
 var app = new Vue({
     el: '#app',
-    delimiters: ['[[', ']]'],
     data: {
         message: 'Hello Vue.'
     }
@@ -24,7 +23,6 @@ var app2 = new Vue({
 var app4 = new Vue({
 
     el: '#app-4',
-    delimiters: ['[[', ']]'],
   data: {
     todos: [
       { text: 'Learn JavaScript' },
@@ -36,7 +34,6 @@ var app4 = new Vue({
 
 var app5 = new Vue({
   el: '#app-5',
-        delimiters: ['[[', ']]'],
   data: {
     message: 'Hello Vue.js!'
   },
@@ -49,7 +46,6 @@ var app5 = new Vue({
 
 var app6 = new Vue({
   el: '#app-6',
-    delimiters: ['[[', ']]'],
   data: {
     message: 'Hello Vue!'
   }
@@ -60,7 +56,7 @@ Vue.component('todo-item', {
   // "prop", which is like a custom attribute.
   // This prop is called todo.
   props: ['todo'],
-  template: '<li>{{ todo.text }}</li>'
+  template: '<li>[[ todo.text ]]</li>'
 })
 
 var app7 = new Vue({
