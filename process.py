@@ -2,9 +2,11 @@ from flask import Flask, render_template, request, jsonify
 
 app = Flask(__name__)
 
+
 @app.route('/')
 def index():
 	return render_template('form.html')
+
 
 @app.route('/process', methods=['POST'])
 def process():
@@ -19,13 +21,21 @@ def process():
 
 	return jsonify({'error' : 'Missing data!'})
 
+
 @app.route("/2")
 def index_2():
     return render_template("index.html", **{'greeting': 'Hello from Flask!'})
 
+
 @app.route("/3")
 def index_3():
     return render_template("index_2.html", **{'message': 'Hello from Flask!'})
+
+
+@app.route('/ip')
+def show_ip():
+	return jsonify(request.remote_addr)
+
 
 if __name__ == '__main__':
 	app.run(debug=True)
